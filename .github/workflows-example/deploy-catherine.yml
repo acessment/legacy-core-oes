@@ -65,6 +65,7 @@ jobs:
             --build-arg VITE_EMAIL_DOMAIN="${{ vars.VITE_EMAIL_DOMAIN }}" \
             --build-arg VITE_AUTH_DOMAIN="${{ vars.VITE_AUTH_DOMAIN }}" \
             --build-arg VITE_S3_PUBLIC_URL="${{ vars.VITE_S3_PUBLIC_URL }}" \
+            --build-arg VITE_ENCRYPTION_SECRET_KEY="${{ secrets.VITE_ENCRYPTION_SECRET_KEY }}" \
             --remote-only
 
       - name: Deployment Summary
