@@ -1,0 +1,96 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500;700;800&display=swap'); */
+/* change this to trigger deploy to all apps*/
+* {
+    font-variant-numeric: lining-nums;
+}
+
+html body {
+    font-family: "Alegreya Sans", "Noto Sans TC", "Noto Sans SC", "sans-serif";
+    letter-spacing: 0.01rem;
+
+    overflow-wrap: break-word;
+    /* modern browsers */
+    word-wrap: break-word;
+    /* legacy / older browsers */
+
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: #324054;
+}
+
+li {
+    color: #324054;
+}
+
+.gradient-text {
+    background: linear-gradient(to right,
+            #324054,
+            #0067FE,
+            #6F5DF0,
+            #0067FE,
+            #324054,
+            #0067FE,
+            #6F5DF0,
+        );
+    background-size: 300% 300%;
+    background-clip: text;
+}
+
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 25%;
+    }
+
+    25% {
+        background-position: 50% 75%;
+    }
+
+    50% {
+        background-position: 100% 75%;
+    }
+
+    75% {
+        background-position: 50% 25%;
+    }
+
+    100% {
+        background-position: 0% 25%;
+    }
+}
+
+
+/* button {
+    -webkit-appearance: none;
+    /* For Safari/Chrome browsers */
+-moz-appearance: none;
+/* For Firefox browsers */
+/*border: none;*/
+/* Optional: Remove any existing borders */
+background-color: transparent;
+/* Optional: Set a transparent background */
+padding: 0;
+
+/* Optional: Remove any padding */
+/* Add any additional styles as needed */
+@theme {
+    --color-aceBlue: #0067fe;
+}

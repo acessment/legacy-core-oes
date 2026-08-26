@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">System architecture</title>
+  <desc id="desc">Core-OES frontend and Express backend run on Fly.io. The backend calls pyacessmentai-lambda, an AI generation service hosted on AWS Lambda. Pyacessmentai-lambda has dashed package connections to Lambda HTTP Package and pyacessmentai Package.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f7f4ed}.grid{stroke:#ddd6c8;stroke-width:1;opacity:.75}.box{fill:#fffdfa;stroke:#252525;stroke-width:3;rx:18}.cloud{fill:#fff8e8;stroke:#bd7515;stroke-width:3;stroke-dasharray:10 7;rx:25}.line{fill:none;stroke:#4d5961;stroke-width:4;marker-end:url(#arrow)}.dash{fill:none;stroke:#8c6b3e;stroke-width:3;stroke-dasharray:10 8}.label{font-family:Arial,Helvetica,sans-serif;font-size:30px;font-weight:700;fill:#1f2933}.sub{font-family:Arial,Helvetica,sans-serif;font-size:21px;fill:#53606a}.small{font-family:Arial,Helvetica,sans-serif;font-size:19px;font-weight:600;fill:#65717a}.badge{font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:700;fill:#0a6177}
+    </style>
+    <pattern id="paperGrid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" class="grid" fill="none"/></pattern>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#4d5961"/></marker>
+  </defs>
+  <rect class="bg" width="1600" height="1000"/><rect width="1600" height="1000" fill="url(#paperGrid)"/>
+  <text x="80" y="90" class="label" font-size="38">Architecture Overview</text>
+  <text x="80" y="125" class="sub">Frontend, API backend, packages, and AI generation service</text>
+
+  <!-- Main request flow: no connection from Express Backend to Lambda HTTP Package -->
+  <path d="M420 475 H580" class="line"/>
+  <path d="M910 475 H1065" class="line"/>
+  <!-- Package relationships -->
+  <path d="M1245 430 C1210 360,1135 330,1050 305" class="dash"/>
+  <path d="M1305 430 C1350 360,1390 332,1425 305" class="dash"/>
+
+  <!-- Frontend -->
+  <rect x="80" y="360" width="340" height="230" class="box"/>
+  <rect x="105" y="385" width="110" height="30" rx="15" fill="#dff4f7"/><text x="125" y="407" class="badge">FRONTEND</text>
+  <text x="250" y="468" text-anchor="middle" class="label">Core-OES</text><text x="250" y="510" text-anchor="middle" class="sub">(frontend)</text>
+  <path d="M105 545 H395" stroke="#d6d0c5" stroke-width="2"/><text x="250" y="575" text-anchor="middle" class="small">Hosted on Fly.io</text>
+
+  <!-- Backend -->
+  <rect x="580" y="360" width="330" height="230" class="box"/>
+  <rect x="605" y="385" width="100" height="30" rx="15" fill="#e0f5e8"/><text x="625" y="407" class="badge" fill="#0d6a3a">BACKEND</text>
+  <text x="745" y="468" text-anchor="middle" class="label">Express Backend</text><text x="745" y="510" text-anchor="middle" class="sub">(backend)</text>
+  <path d="M605 545 H885" stroke="#d6d0c5" stroke-width="2"/><text x="745" y="575" text-anchor="middle" class="small">Hosted on Fly.io</text>
+
+  <!-- Packages -->
+  <rect x="830" y="115" width="330" height="190" class="box"/>
+  <rect x="855" y="140" width="175" height="30" rx="15" fill="#efe6ff"/><text x="875" y="162" class="badge" fill="#6342a5">LAMBDA PACKAGE</text>
+  <text x="995" y="218" text-anchor="middle" class="label">Lambda HTTP</text><text x="995" y="258" text-anchor="middle" class="label">Package</text>
+  <rect x="1215" y="115" width="330" height="190" class="box"/>
+  <rect x="1240" y="140" width="165" height="30" rx="15" fill="#efe6ff"/><text x="1260" y="162" class="badge" fill="#6342a5">AI PACKAGE</text>
+  <text x="1380" y="228" text-anchor="middle" class="label">pyacessmentai</text><text x="1380" y="268" text-anchor="middle" class="label">Package</text>
+
+  <!-- AWS Lambda -->
+  <rect x="1020" y="360" width="465" height="375" class="cloud"/><text x="1055" y="400" class="small" fill="#9a5c05">AWS LAMBDA</text>
+  <rect x="1065" y="430" width="375" height="230" class="box"/>
+  <rect x="1090" y="455" width="115" height="30" rx="15" fill="#fff0d7"/><text x="1112" y="477" class="badge" fill="#9a5c05">AI SERVICE</text>
+  <text x="1252" y="535" text-anchor="middle" class="label">pyacessmentai-</text><text x="1252" y="575" text-anchor="middle" class="label">lambda</text>
+  <text x="1252" y="618" text-anchor="middle" class="sub">AI generation service</text><text x="1252" y="705" text-anchor="middle" class="small">Hosted on AWS Lambda</text>
+  <text x="80" y="905" class="sub">Solid line: request flow · Dashed lines: package connections</text>
+</svg>

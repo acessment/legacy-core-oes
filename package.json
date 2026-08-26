@@ -1,0 +1,40 @@
+{
+    "name": "@acessment/core-oes-workspace",
+    "private": true,
+    "version": "2.0.0",
+    "type": "module",
+    "scripts": {
+        "dev:catherine": "pnpm --filter @acessment/catherine dev",
+        "build:generator-panel": "pnpm --filter @acessment/generator-panel build",
+        "build:lib": "pnpm --filter @acessment/core-oes build",
+        "build:catherine": "pnpm --filter @acessment/catherine build",
+        "build:all:catherine": "pnpm build:generator-panel && pnpm build:lib && pnpm build:catherine",
+        "lint": "pnpm -r lint"
+    },
+    "dependencies": {
+        "@hello-pangea/dnd": "^18.0.1",
+        "@react-router/node": "^7.12.0",
+        "@tailwindcss/vite": "^4.1.18",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "react-router-dom": "^7.12.0",
+        "react-toastify": "^11.0.5",
+        "remix-utils": "^9.0.0",
+        "sharp": "^0.34.5",
+        "zod": "^4.3.5"
+    },
+    "pnpm": {
+        "overrides": {
+            "react": "19.2.3",
+            "react-dom": "19.2.3",
+            "react-router": "7.12.0"
+        }
+    },
+    "devDependencies": {
+        "@aws-sdk/client-s3": "^3.948.0",
+        "@react-router/dev": "^7.10.0",
+        "@types/node": "^25.0.1",
+        "mongodb": "^7.0.0",
+        "vite-tsconfig-paths": "^5.1.4"
+    }
+}

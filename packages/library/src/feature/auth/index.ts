@@ -1,0 +1,1 @@
+export { AuthCorePage } from "./pages/AuthPage";

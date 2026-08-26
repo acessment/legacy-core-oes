@@ -1,0 +1,9 @@
+/* Main entry point for all library styles */
+@import "tailwindcss";
+/* Library-specific styles */
+@import "./tailwind.css";
+@import "./App.css";
+
+@theme {
+    --color-aceBlue: #0067fe;
+}

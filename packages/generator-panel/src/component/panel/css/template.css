@@ -1,0 +1,413 @@
+@import 'tailwindcss/theme' layer(theme);
+
+@import 'tailwindcss/preflight' layer(base);
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@layer utilities {
+  .question_utility_border {
+    border-radius: 0.375rem;
+    border: 1px solid rgb(229 231 235);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 0.5rem;
+    width: 100%;
+    border-collapse: separate;
+  }
+
+  .question_utility_border:hover {
+    border: 1px solid rgb(229 231 235);
+  }
+
+  .question-utility-option-ring {
+    cursor: pointer;
+  }
+
+  .question-utility-option-ring:hover {
+    box-shadow: 0 0 0 2px rgb(59 130 246);
+  }
+}
+
+@layer base {
+  #panel_display h1 {
+    font-size: 18px;
+    /* Adjust the font size as needed */
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+
+  .panel_reading p {
+    font-size: 14px;
+    /* Adjust the font size as needed */
+  }
+
+  .panel_reading h2 {
+    font-size: 16px;
+    /* Adjust the font size as needed */
+    font-weight: bold;
+    margin-top: 0.5em;
+    /* Adjust the font size as needed */
+    margin-bottom: 0.5em;
+    /* Adjust the font size as needed */
+  }
+
+  #panel_display h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 0.5em;
+    /* Adjust the font size as needed */
+    margin-bottom: 0.5em;
+    /* Adjust the font size as needed */
+  }
+
+  #panel_display h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    /* Adjust the font size as needed */
+  }
+
+  #panel_display h4 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    /* Adjust the font size as needed */
+  }
+
+  .panel_reading {
+    font-family:
+      'Times New Roman', 'Comic Sans MS', cursive, 'Cardo', 'Noto Serif HK',
+      serif !important;
+    overflow-wrap: normal;
+    /* modern browsers */
+    word-wrap: normal;
+    /* legacy / older browsers */
+  }
+
+  #panel_display div.header {
+    display: block;
+    text-align: left;
+    position: running(header);
+  }
+
+  #panel_display div.footer {
+    display: block;
+    text-align: right;
+    position: running(footer);
+    font-family:
+      'Times New Roman', 'Comic Sans MS', cursive, 'Cardo', 'Noto Serif HK',
+      serif !important;
+    font-size: 12px;
+  }
+
+  #panel_display div.content {
+    page-break-inside: avoid;
+    margin-bottom: 2em;
+    font-family:
+      'Times New Roman', 'Comic Sans MS', cursive, 'Cardo', 'Noto Serif HK',
+      serif;
+    font-size: 14px;
+  }
+
+  #panel_display div.sel-fitB-container {
+    border: 1px solid;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+
+  #panel_display div.examples-container {
+    padding-bottom: 20px;
+    border-bottom: 2px dashed;
+  }
+
+  .wrong-answer {
+    text-decoration: underline wavy;
+    color: red;
+  }
+
+  .correct-answer {
+    color: green;
+  }
+
+  p.wrong-answer {
+    line-height: 1em !important;
+  }
+
+  p.correct-answer {
+    line-height: 1em !important;
+  }
+
+  .explanation {
+    border: 1px solid red;
+    font-size: 12px;
+    color: red;
+    line-height: 1.5em;
+  }
+
+  span {
+    page-break-inside: avoid;
+  }
+
+  span.option-fitB {
+    padding: 2px 6px 2px 6px;
+  }
+
+  table {
+    page-break-inside: avoid;
+  }
+
+  table.question {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+
+  td.q_number {
+    width: 2em;
+    vertical-align: top;
+  }
+
+  p {
+    page-break-inside: avoid;
+    line-height: 1.28em;
+  }
+
+  .outer_container {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .panel_reading h2 {
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .panel_container {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1em;
+    overflow-wrap: normal;
+    /* modern browsers */
+    word-wrap: normal;
+    /* legacy / older browsers */
+
+  }
+
+  .question_container {
+    display: flex;
+  }
+
+  .question_image {
+    width: 140px;
+    padding: 4px;
+    height: auto;
+  }
+
+  .image_container {
+    border: 1px solid #787878;
+  }
+
+  .translation {
+    page-break-before: always;
+  }
+
+  .chinese {
+    font-family: 'MingLiU';
+  }
+
+  .question {
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+  }
+
+  .options {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .option {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+  }
+
+  .option-key {
+    vertical-align: top;
+    text-align: start;
+    width: 1em;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .option:last-child {
+    margin-bottom: 0px;
+  }
+
+  .circle {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    position: relative;
+    top: 2px;
+    align-self: center;
+  }
+
+  .circle-example {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #000;
+    background-color: rgb(100 116 139) !important;
+    border-radius: 50%;
+    position: relative;
+    top: 2px;
+    align-self: center;
+  }
+
+  .circle-answer {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #000;
+    background-color: #000;
+    border-radius: 50%;
+    position: relative;
+    top: 2px;
+    align-self: center;
+  }
+
+  .circle-wrong-answer {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #000;
+    background-color: red;
+    border-radius: 50%;
+    position: relative;
+    top: 2px;
+    align-self: center;
+  }
+
+  .reading_paragraph p {
+    margin-bottom: 6px;
+  } 
+
+  .circle-correct-answer {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #000;
+    background-color: green;
+    border-radius: 50%;
+    position: relative;
+    top: 2px;
+    align-self: center;
+  }
+
+  .answer-line {
+    padding-top: 1em;
+    /* text-decoration: underline; */
+  }
+
+  .blank-answer-line {
+    height: 1.2em;
+    min-width: 20em;
+    border-bottom: 1px solid #000;
+  }
+
+  .short-answer-line {
+    position: relative;
+    display: inline-block;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    height: 1.5em;
+    min-width: 11em;
+    border-bottom: 1px solid #000;
+  }
+
+  .tfng-choice {
+    text-align: center;
+    align-items: center;
+    width: 3em;
+  }
+
+  .paragraph_sq {
+    line-height: 200%;
+    page-break-inside: avoid;
+    padding-right: 2em;
+  }
+
+  .sq_div {
+    border: 1px solid black;
+    padding: 1em;
+    page-break-inside: avoid;
+  }
+
+  .long_blank {
+    width: 100%;
+    border-bottom: 1px solid black;
+  }
+
+  .score-div {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+  }
+
+  .score-box {
+    border: 1px solid black;
+    padding: 0.5em;
+  }
+}
+
+/* @page {
+    size: A4;
+    margin: 2cm;
+
+    @top-left {
+        content: element(header);
+    }
+    @bottom-right {
+        content: element(footer);
+    }
+}
+@media screen {
+    body {
+        size: A4;
+        padding: 2cm;
+        width: 210mm;
+        border: 1px solid grey;
+    }
+} */
+/* @layer base {
+    img {
+        @apply inline-block;
+    }
+} */
+
+.logo-img {
+  display: inline-block;
+}
